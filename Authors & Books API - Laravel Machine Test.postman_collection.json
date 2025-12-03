@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "498cf3db-6f80-4b18-9193-4d112140c3e8",
+		"name": "Authors & Books API - Laravel Machine Test",
+		"description": "Complete RESTful API for managing authors and their books\nBuilt with Laravel 12 + Eloquent + AJAX frontend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42520400",
+		"_collection_link": "https://payaswini-0687.postman.co/workspace/601707e3-ce81-46a9-80e6-225e798cc438/collection/42520400-498cf3db-6f80-4b18-9193-4d112140c3e8?action=share&source=collection_link&creator=42520400"
+	},
+	"item": [
+		{
+			"name": "1. Get All Authors with Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/authors",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"authors"
+					]
+				},
+				"description": "Fetch all authors with their books"
+			},
+			"response": [
+				{
+					"name": "1. Get All Authors with Books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/authors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"authors"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Dec 2025 14:41:41 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"J.K. Rowling\",\n        \"email\": \"rowling@example.com\",\n        \"created_at\": \"2025-12-03T14:32:04.000000Z\",\n        \"updated_at\": \"2025-12-03T14:32:04.000000Z\",\n        \"books\": [\n            {\n                \"id\": 3,\n                \"author_id\": 2,\n                \"name\": \"Harry Potter\",\n                \"price\": \"699.00\",\n                \"created_at\": \"2025-12-03T14:32:04.000000Z\",\n                \"updated_at\": \"2025-12-03T14:32:04.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"author_id\": 2,\n                \"name\": \"Chamber of Secrets\",\n                \"price\": \"450.00\",\n                \"created_at\": \"2025-12-03T14:32:04.000000Z\",\n                \"updated_at\": \"2025-12-03T14:32:04.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"author_id\": 2,\n                \"name\": \"Prisoner of Azkaban\",\n                \"price\": \"550.00\",\n                \"created_at\": \"2025-12-03T14:32:04.000000Z\",\n                \"updated_at\": \"2025-12-03T14:32:04.000000Z\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "2. Create New Author + Books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"J.K. Rowling\",\n    \"email\": \"jk@example.com\",\n    \"books\": [\n        { \"name\": \"Harry Potter and the Philosopher's Stone\", \"price\": 599.99 },\n        { \"name\": \"Chamber of Secrets\", \"price\": 499.99 }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/authors",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"authors"
+					]
+				},
+				"description": "Create author with multiple books"
+			},
+			"response": [
+				{
+					"name": "2. Create New Author + Books",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"J.K. Rowling\",\n    \"email\": \"jk@example.com\",\n    \"books\": [\n        { \"name\": \"Harry Potter and the Philosopher's Stone\", \"price\": 599.99 },\n        { \"name\": \"Chamber of Secrets\", \"price\": 499.99 }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/authors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"authors"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Dec 2025 14:41:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"name\": \"J.K. Rowling\",\n    \"email\": \"jk@example.com\",\n    \"created_at\": \"2025-12-03T14:41:55.000000Z\",\n    \"updated_at\": \"2025-12-03T14:41:55.000000Z\",\n    \"books\": [\n        {\n            \"id\": 6,\n            \"author_id\": 3,\n            \"name\": \"Harry Potter and the Philosopher's Stone\",\n            \"price\": \"599.99\",\n            \"created_at\": \"2025-12-03T14:41:55.000000Z\",\n            \"updated_at\": \"2025-12-03T14:41:55.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"author_id\": 3,\n            \"name\": \"Chamber of Secrets\",\n            \"price\": \"499.99\",\n            \"created_at\": \"2025-12-03T14:41:55.000000Z\",\n            \"updated_at\": \"2025-12-03T14:41:55.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "3. Get Single Author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/authors/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"authors",
+						"2"
+					]
+				},
+				"description": "Replace 1 with actual author ID"
+			},
+			"response": [
+				{
+					"name": "3. Get Single Author",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/authors/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"authors",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Dec 2025 14:50:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"name\": \"J.K. Rowling\",\n    \"email\": \"rowling@example.com\",\n    \"created_at\": \"2025-12-03T14:32:04.000000Z\",\n    \"updated_at\": \"2025-12-03T14:32:04.000000Z\",\n    \"books\": [\n        {\n            \"id\": 3,\n            \"author_id\": 2,\n            \"name\": \"Harry Potter\",\n            \"price\": \"699.00\",\n            \"created_at\": \"2025-12-03T14:32:04.000000Z\",\n            \"updated_at\": \"2025-12-03T14:32:04.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"author_id\": 2,\n            \"name\": \"Chamber of Secrets\",\n            \"price\": \"450.00\",\n            \"created_at\": \"2025-12-03T14:32:04.000000Z\",\n            \"updated_at\": \"2025-12-03T14:32:04.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"author_id\": 2,\n            \"name\": \"Prisoner of Azkaban\",\n            \"price\": \"550.00\",\n            \"created_at\": \"2025-12-03T14:32:04.000000Z\",\n            \"updated_at\": \"2025-12-03T14:32:04.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "4. Update Author + Books (Sync)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"J.K. Rowling\",\n    \"email\": \"rowling.new@example.com\",\n    \"books\": [\n        { \"id\": 1, \"name\": \"Harry Potter (Updated)\", \"price\": 699.99 },\n        { \"id\": 2, \"name\": \"Chamber of Secrets\", \"price\": 550 },\n        { \"name\": \"Prisoner of Azkaban\", \"price\": 650 }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/authors/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"authors",
+						"2"
+					]
+				},
+				"description": "Update author and sync books (old books not in list are deleted)"
+			},
+			"response": [
+				{
+					"name": "4. Update Author + Books (Sync)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"J.K. Rowling\",\n    \"email\": \"rowling.new@example.com\",\n    \"books\": [\n        { \"id\": 1, \"name\": \"Harry Potter (Updated)\", \"price\": 699.99 },\n        { \"id\": 2, \"name\": \"Chamber of Secrets\", \"price\": 550 },\n        { \"name\": \"Prisoner of Azkaban\", \"price\": 650 }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/authors/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"authors",
+								"2"
+							]
+						}
+					},
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Dec 2025 14:50:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The selected books.0.id is invalid. (and 1 more error)\",\n    \"errors\": {\n        \"books.0.id\": [\n            \"The selected books.0.id is invalid.\"\n        ],\n        \"books.1.id\": [\n            \"The selected books.1.id is invalid.\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "5. Delete Author (Cascade Delete Books)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/authors/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"authors",
+						"2"
+					]
+				},
+				"description": "Deletes author and ALL related books automatically"
+			},
+			"response": [
+				{
+					"name": "5. Delete Author (Cascade Delete Books)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/authors/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"authors",
+								"2"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Dec 2025 14:50:57 GMT"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000",
+			"description": "Change if your server runs on different port"
+		}
+	]
+}
